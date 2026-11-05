@@ -1,0 +1,16 @@
+# Configuracion de nodos para la recoleccion de metricas mediante Node Exporter.
+# Prometheus consulta periodicamente las metricas de cada Raspberry Pi via HTTP (puerto 9100).
+# Cada nodo debe tener una direccion IP y coincidir con nodes_ping.yml.
+
+- targets:
+    - "192.168.1.41:9100"
+  labels:
+    nodo: "raspberry-01"
+    ip: "192.168.1.41"
+
+- targets:
+    - "192.168.1.36:9100"
+  labels:
+    nodo: "raspberry-02"
+    ip: "192.168.1.36"
+

@@ -1,0 +1,15 @@
+# Configuracion de nodos para la verificacion de disponibilidad mediante Blackbox Exporter.
+# Prometheus solicita periodicamente sondas ICMP (ping) para comprobar la disponibilidad de cada Raspberry Pi.
+# Cada nodo debe tener una direccion IP y coincidir con nodes.yml.
+
+- targets:
+    - "192.168.1.41"
+  labels:
+    nodo: "raspberry-01"
+    ip: "192.168.1.41"
+
+- targets:
+    - "192.168.1.36"
+  labels:
+    nodo: "raspberry-02"
+    ip: "192.168.1.36"
