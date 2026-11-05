@@ -3,10 +3,6 @@
 # Instala y habilita node_exporter como servicio — arranca solo con el sistema.
 set -e
 
-echo "== Instalando node_exporter =="
-sudo apt update
-sudo apt install -y prometheus-node-exporter
-
 echo "== Habilitando el servicio para que arranque con el sistema =="
 sudo systemctl enable --now prometheus-node-exporter
 
@@ -24,4 +20,4 @@ curl -s "http://localhost:9100/metrics" | grep -i 'thermal_zone\|hwmon_temp' | h
 echo ""
 echo "IP: $IP"
 echo "Agregar IP en la carpeta del servidor central prometheus/targets/nodes.yml y nodes_ping.yml."
-echo "Reservar IP por MAC en el router."
+echo "Reservar IP en el router."
