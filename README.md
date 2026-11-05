@@ -59,10 +59,10 @@ Para mitigar estas condiciones, se propone un sistema de monitoreo local y centr
 1. 🍓 **Adquisición:** Node Exporter obtiene y expone las métricas de utilización de CPU, uso de memoria RAM, temperatura de CPU (si está disponible) y ocupación del almacenamiento SD de cada Raspberry Pi mediante HTTP (puerto `9100`).
 2. 📡 **Comunicación:** el router o punto de acceso conecta las Raspberry Pi y el PC servidor a la red local `MONITOREO` (Wi-Fi de 2.4 GHz), permitiendo las consultas HTTP sobre TCP/IP y las pruebas de disponibilidad mediante ICMP.
 3. 🖥️ **Servidor de monitoreo (PC):**
-   - **Recolección:** Prometheus consulta las métricas cada **10 segundos** mediante HTTP (*scrape*, modelo *pull*).
+   - **Recolección:** Prometheus consulta las métricas cada 10 segundos mediante HTTP (scrape, modelo pull).
    - **Disponibilidad:** Prometheus solicita sondas a Blackbox Exporter, que comprueba mediante ICMP (*ping*) si cada nodo es accesible.
-   - **Almacenamiento:** Prometheus conserva las métricas y los resultados de las sondas en una base de datos de series temporales (**TSDB**) local.
-4. 📊 **Visualización:** Grafana consulta Prometheus mediante PromQL y presenta las métricas, los estados de disponibilidad y las alertas en un dashboard accesible desde un navegador conectado a la misma LAN. Las celdas del dashboard utilizan un **código de colores según umbrales**: **🟢 verde** para funcionamiento normal, **🟡 amarillo** para advertencia y **🔴 rojo** para condiciones críticas.
+   - **Almacenamiento:** Prometheus conserva las métricas y los resultados de las sondas en una base de datos de series temporales (TSDB) local.
+4. 📊 **Visualización:** Grafana consulta Prometheus mediante PromQL y presenta las métricas, los estados de disponibilidad y las alertas en un dashboard accesible desde un navegador conectado a la misma LAN. Las celdas del dashboard utilizan un código de colores según umbrales: 🟢 verde para funcionamiento normal, 🟡 amarillo para advertencia y 🔴 rojo para condiciones críticas.
 
 ### 🚦 Umbrales de visualización
 
@@ -108,7 +108,7 @@ Una vez instalado el paquete, se transfiere el archivo `setup_node_exporter.sh` 
 
 ### 📡 2. Conexión a la red LAN y activación del servicio
 
-En cada Raspberry Pi, se configura la conexión a la red Wi-Fi local `MONITOREO` (banda de **2.4 GHz**, sin acceso a Internet):
+En cada Raspberry Pi, se configura la conexión a la red Wi-Fi local `MONITOREO` (banda de 2.4 GHz, sin acceso a Internet):
 
 ```bash
 sudo raspi-config nonint do_wifi_ssid_passphrase \
