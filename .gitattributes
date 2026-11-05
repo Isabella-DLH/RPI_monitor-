@@ -1,0 +1,10 @@
+
+# Scripts Bash: conservar saltos de linea LF
+*.sh text eol=lf
+
+# Archivos de configuracion YAML
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Documentacion Markdown
+*.md text eol=lf
