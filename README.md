@@ -75,6 +75,15 @@ Para mitigar estas condiciones, se propone un sistema de monitoreo local y centr
 | **Ocupación del almacenamiento SD** | ≤ 80 % | > 80 % y ≤ 90 % | > 90 % |
 
 
+<p align="center">
+  <a href="dashboard.png">
+    <img src="dashboard.png"
+         alt="prueba grafana"
+         width="1200">
+  </a>
+</p>
+
+
 ## 📁 Estructura del proyecto
 
 Los archivos de configuración de los nodos se organizan de la siguiente manera:
